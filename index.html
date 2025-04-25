@@ -856,13 +856,12 @@
         <p>© 2025 Los Tortugo's Seafood Market. All rights reserved.</p>
     </footer>
 
-    <script>
+  <script>
         // Highlight active section in header and handle hover
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav ul li');
         let isHovering = false;
 
-        // Handle scroll-based active state
         window.addEventListener('scroll', () => {
             if (!isHovering) {
                 let current = '';
@@ -883,7 +882,6 @@
             }
         });
 
-        // Handle hover on navigation links
         navLinks.forEach(link => {
             link.addEventListener('mouseenter', () => {
                 isHovering = true;
@@ -910,7 +908,6 @@
                 });
             });
 
-            // Close hamburger menu on click (mobile)
             link.addEventListener('click', () => {
                 const menuToggle = document.getElementById('menu-toggle');
                 menuToggle.checked = false;
@@ -918,12 +915,10 @@
             });
         });
 
-        // Toggle hamburger menu
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('nav').classList.toggle('active');
         });
 
-        // Back to top button visibility
         const backToTop = document.querySelector('.back-to-top');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
@@ -933,23 +928,27 @@
             }
         });
 
-        // Hide/show header on scroll (mobile only)
+        // Hide/show header and adjust sticky headers on mobile
         let lastScrollTop = 0;
         const header = document.querySelector('header');
         const headerHeight = header.offsetHeight;
+        const stickyHeaders = document.querySelectorAll('.menu-section h3');
 
         window.addEventListener('scroll', () => {
-            if (window.innerWidth <= 768) { // Only apply on mobile
+            if (window.innerWidth <= 768) {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
                 if (scrollTop > lastScrollTop) {
-                    // Scrolling down
                     header.style.top = `-${headerHeight}px`;
+                    stickyHeaders.forEach(header => {
+                        header.style.top = '0px'; // Snap to top when nav bar is hidden
+                    });
                 } else {
-                    // Scrolling up
                     header.style.top = '0';
+                    stickyHeaders.forEach(header => {
+                        header.style.top = '60px'; // Restore position when nav bar is visible
+                    });
                 }
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scroll
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             }
         });
     </script>
