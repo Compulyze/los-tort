@@ -33,20 +33,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 15px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .logo img {
-            width: 150px;
+            width: 180px;
             height: auto;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
         nav ul li {
@@ -57,6 +57,7 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: 18px;
             transition: color 0.3s;
         }
 
@@ -67,15 +68,16 @@
         nav ul li.active a::after {
             content: "🦞";
             position: absolute;
-            right: -20px;
-            top: 0;
-            font-size: 14px;
+            right: -25px;
+            top: 2px;
+            font-size: 18px;
+            transition: all 0.3s ease;
         }
 
         /* Hamburger Menu */
         .hamburger {
             display: none;
-            font-size: 24px;
+            font-size: 28px;
             color: white;
             cursor: pointer;
         }
@@ -84,19 +86,66 @@
             display: none;
         }
 
+        /* Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1200x400?text=Hero+Image+-+Seafood') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero .cta-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .hero .cta-btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
         /* Main Content */
         main {
             padding-top: 80px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px;
         }
 
         section {
-            margin-bottom: 40px;
-            padding: 20px;
+            margin-bottom: 50px;
+            padding: 30px;
             background-color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -105,23 +154,27 @@
         }
 
         h1 {
+            font-size: 40px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         h2 {
-            margin-bottom: 15px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
         }
 
         h3 {
-            margin-top: 20px;
-            margin-bottom: 10px;
+            font-size: 26px;
+            margin-top: 25px;
+            margin-bottom: 15px;
         }
 
         p, li {
-            margin-bottom: 10px;
+            font-size: 18px;
+            margin-bottom: 15px;
         }
 
         ul {
@@ -132,48 +185,88 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            padding: 15px 0;
             border-bottom: 1px dashed #ccc;
+            transition: background-color 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #f9f9f9;
         }
 
         .menu-item:last-child {
             border-bottom: none;
         }
 
+        .menu-item span {
+            font-size: 18px;
+        }
+
+        .popular {
+            position: relative;
+        }
+
+        .popular::before {
+            content: "Popular!";
+            position: absolute;
+            top: -10px;
+            left: 0;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
         .order-btn {
             background-color: #3498db;
             color: white;
-            padding: 8px 12px;
+            padding: 10px 15px;
             border: none;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 14px;
-            transition: background-color 0.3s;
+            font-size: 16px;
+            transition: transform 0.3s ease, background-color 0.3s;
         }
 
         .order-btn:hover {
             background-color: #2980b9;
+            transform: scale(1.05);
         }
 
         .note {
             font-style: italic;
             color: #777;
-            font-size: 0.9em;
-            margin-top: 10px;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        /* Sticky Menu Headers */
+        .menu-section {
+            position: relative;
+        }
+
+        .menu-section h3 {
+            position: sticky;
+            top: 80px;
+            background-color: white;
+            padding: 10px 0;
+            z-index: 100;
         }
 
         /* Location Section */
         #location iframe {
             width: 100%;
-            height: 300px;
+            height: 350px;
             border: none;
-            border-radius: 8px;
-            margin-top: 10px;
+            border-radius: 10px;
+            margin-top: 15px;
         }
 
         /* Contact Section */
         #contact p {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 18px;
         }
 
         #contact a {
@@ -185,12 +278,31 @@
             text-decoration: underline;
         }
 
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            text-decoration: none;
+            display: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #2980b9;
+        }
+
         /* Footer */
         footer {
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             position: relative;
             bottom: 0;
             width: 100%;
@@ -201,34 +313,42 @@
             .header-container {
                 flex-direction: row;
                 justify-content: space-between;
+                padding: 10px 15px;
             }
 
             nav {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #2c3e50;
+                padding: 0;
+                margin: 0;
             }
 
             nav.active {
                 display: block;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: #2c3e50;
-                padding: 20px;
             }
 
             nav ul {
                 flex-direction: column;
-                gap: 10px;
+                gap: 0;
+            }
+
+            nav ul li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
 
             nav ul li a {
-                font-size: 18px;
+                display: block;
+                padding: 15px 20px;
+                font-size: 20px;
             }
 
             nav ul li.active a::after {
-                right: 0;
-                top: 2px;
+                right: 20px;
+                top: 15px;
             }
 
             .hamburger {
@@ -239,14 +359,44 @@
                 display: block;
             }
 
+            .hero {
+                height: 300px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .cta-btn {
+                font-size: 18px;
+                padding: 10px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
             .menu-item {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
             }
 
+            .menu-item span {
+                font-size: 16px;
+            }
+
             .order-btn {
                 align-self: flex-end;
+                font-size: 14px;
             }
         }
     </style>
@@ -255,7 +405,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="https://via.placeholder.com/150x50?text=Los+Tortugo's+Logo" alt="Los Tortugo's Seafood Market Logo">
+                <img src="https://via.placeholder.com/180x60?text=Los+Tortugo's+Logo" alt="Los Tortugo's Seafood Market Logo">
             </div>
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="hamburger">☰</label>
@@ -271,6 +421,13 @@
     </header>
 
     <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Fresh Seafood Awaits!</h1>
+                <a href="#menu" class="cta-btn">Order Now</a>
+            </div>
+        </section>
+
         <section id="home">
             <h1>Welcome to Los Tortugo's Seafood Market</h1>
             <p>A local eatery and market serving seafood such as oysters and fish tacos, plus cocktails in Port Isabel, TX.</p>
@@ -280,252 +437,264 @@
             <h2>Our Menu</h2>
             <p><strong>$$$ PAY CASH & SAVE $$$</strong></p>
 
-            <h3>Appetizers</h3>
-            <ul>
-                <li class="menu-item">
-                    <span>Ceviche* (Fish, Shrimp, Fish & Shrimp, or Calamari)</span>
-                    <span>$13.95 (1 LB.) / $7.50 (1/2 LB.)</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Shrimp Cocktail (Shrimp, Oyster, Crab, or Calamari Cocktail)</span>
-                    <span>$13.95 (1 LB.)</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Shrimp Cocktail - Pick 2</span>
-                    <span>$16.95 (1 LB.)</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Oyster Cocktail</span>
-                    <span>Market Price</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Vuelve La Vida (Shrimp, Oyster, Calamari & Crab Meat)</span>
-                    <span>$16.95 (1 LB.) / $27.95 (2 LB.)</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Shrimp Pasta Salad</span>
-                    <span>$10.95 (Pint) / $5.50 (1/2 Pint)</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Crab Fingers (Fried or Grilled)</span>
-                    <span>Market Price</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Crab Cake</span>
-                    <span>Market Price</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Fried Calamari</span>
-                    <span>Market Price</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Oyster on the Half Shell</span>
-                    <span>Market Price</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Freshly Caught Boiled Shrimp (Pick Your Size from Our Market – Made to Order)</span>
-                    <span>Market Price</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Guacamole / 1 Basket of Chips (5)</span>
-                    <span>$5.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Guacamole / 1 Basket of Chips (7)</span>
-                    <span>$7.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Extra Chips / Salsa or Caldito</span>
-                    <span>$3.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Mozzarella Sticks</span>
-                    <span>$5.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Stuffed Jalapeños</span>
-                    <span>$5.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Ceviche Tostadas (2)</span>
-                    <span>$13.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Stuffed Crab</span>
-                    <span>$4.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-            </ul>
-            <p class="note">*There may be small bones in some fresh fish. Certain individuals may be allergic to specific types of fish or ingredients used in food items (i.e., MSG). We are not responsible for any individuals’ allergic reactions to the ingredients used. Please alert your server of any food allergies prior to ordering. There is a risk associated with consuming raw oysters or any raw seafood. If you have chronic illness of the liver, stomach, or blood, or have immune disorders, you are at great risk of illness from raw oysters or any seafood.</p>
+            <div class="menu-section">
+                <h3>Appetizers</h3>
+                <ul>
+                    <li class="menu-item popular">
+                        <span>Ceviche* (Fish, Shrimp, Fish & Shrimp, or Calamari)</span>
+                        <span>$13.95 (1 LB.) / $7.50 (1/2 LB.)</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Shrimp Cocktail (Shrimp, Oyster, Crab, or Calamari Cocktail)</span>
+                        <span>$13.95 (1 LB.)</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Shrimp Cocktail - Pick 2</span>
+                        <span>$16.95 (1 LB.)</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Oyster Cocktail</span>
+                        <span>Market Price</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Vuelve La Vida (Shrimp, Oyster, Calamari & Crab Meat)</span>
+                        <span>$16.95 (1 LB.) / $27.95 (2 LB.)</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Shrimp Pasta Salad</span>
+                        <span>$10.95 (Pint) / $5.50 (1/2 Pint)</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Crab Fingers (Fried or Grilled)</span>
+                        <span>Market Price</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Crab Cake</span>
+                        <span>Market Price</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Fried Calamari</span>
+                        <span>Market Price</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Oyster on the Half Shell</span>
+                        <span>Market Price</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item popular">
+                        <span>Freshly Caught Boiled Shrimp (Pick Your Size from Our Market – Made to Order)</span>
+                        <span>Market Price</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Guacamole / 1 Basket of Chips (5)</span>
+                        <span>$5.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Guacamole / 1 Basket of Chips (7)</span>
+                        <span>$7.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Extra Chips / Salsa or Caldito</span>
+                        <span>$3.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Mozzarella Sticks</span>
+                        <span>$5.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Stuffed Jalapeños</span>
+                        <span>$5.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Ceviche Tostadas (2)</span>
+                        <span>$13.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Stuffed Crab</span>
+                        <span>$4.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                </ul>
+                <p class="note">*There may be small bones in some fresh fish. Certain individuals may be allergic to specific types of fish or ingredients used in food items (i.e., MSG). We are not responsible for any individuals’ allergic reactions to the ingredients used. Please alert your server of any food allergies prior to ordering. There is a risk associated with consuming raw oysters or any raw seafood. If you have chronic illness of the liver, stomach, or blood, or have immune disorders, you are at great risk of illness from raw oysters or any seafood.</p>
+            </div>
 
-            <h3>Surf or Turf</h3>
-            <ul>
-                <li class="menu-item">
-                    <span>Shrimp or Fish Tacos/Tostadas (4 Corn Tortilla Tacos or 2 Tostadas Served with 2 Sides)</span>
-                    <span>$13.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Grilled Shrimp / Chicken Strips Salad</span>
-                    <span>$12.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Fresh Catch of the Day (Fried, Grilled, or Blackened Served with 2 Sides)</span>
-                    <span>Market Price + Cooking Fee</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>We Can Cook Anything from Our Market</span>
-                    <span>Market Price + Cooking Fee</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Cook Your Catch (Includes 2 Sides, Must Be Clean & Filleted / 1 LB. Max per Person)</span>
-                    <span>$10.95 per person</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>1/2# Burger & 1 Side</span>
-                    <span>$12.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Chicken Strips & 1 Side</span>
-                    <span>$9.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Popcorn Shrimp</span>
-                    <span>$12.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-            </ul>
+            <div class="menu-section">
+                <h3>Surf or Turf</h3>
+                <ul>
+                    <li class="menu-item popular">
+                        <span>Shrimp or Fish Tacos/Tostadas (4 Corn Tortilla Tacos or 2 Tostadas Served with 2 Sides)</span>
+                        <span>$13.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Grilled Shrimp / Chicken Strips Salad</span>
+                        <span>$12.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Fresh Catch of the Day (Fried, Grilled, or Blackened Served with 2 Sides)</span>
+                        <span>Market Price + Cooking Fee</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>We Can Cook Anything from Our Market</span>
+                        <span>Market Price + Cooking Fee</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Cook Your Catch (Includes 2 Sides, Must Be Clean & Filleted / 1 LB. Max per Person)</span>
+                        <span>$10.95 per person</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>1/2# Burger & 1 Side</span>
+                        <span>$12.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Chicken Strips & 1 Side</span>
+                        <span>$9.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Popcorn Shrimp</span>
+                        <span>$12.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                </ul>
+            </div>
 
-            <h3>Drinks</h3>
-            <ul>
-                <li class="menu-item">
-                    <span>Fountain Drinks or Iced Tea (Free Refills)</span>
-                    <span>$2.99</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Freshly Squeezed Lemonade (No Free Refills)</span>
-                    <span>$2.99</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Beer (12 oz.)</span>
-                    <span>$3.50</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Beer (24 oz.)</span>
-                    <span>$6.99</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Wine</span>
-                    <span>$5.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>House Michelada</span>
-                    <span>$9.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-            </ul>
+            <div class="menu-section">
+                <h3>Drinks</h3>
+                <ul>
+                    <li class="menu-item">
+                        <span>Fountain Drinks or Iced Tea (Free Refills)</span>
+                        <span>$2.99</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Freshly Squeezed Lemonade (No Free Refills)</span>
+                        <span>$2.99</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Beer (12 oz.)</span>
+                        <span>$3.50</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Beer (24 oz.)</span>
+                        <span>$6.99</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Wine</span>
+                        <span>$5.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>House Michelada</span>
+                        <span>$9.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                </ul>
+            </div>
 
-            <h3>Entrées</h3>
-            <ul>
-                <li class="menu-item">
-                    <span>Caldo De Mariscos (Local Seafood, Freshly Made Friday & Saturday Only)</span>
-                    <span>$14.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Shrimp or Fish Ranchero</span>
-                    <span>$13.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Black Drum Plate* (Fried, Grilled, or Blackened)</span>
-                    <span>Market Price</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Fish, Shrimp, Oyster, or Chicken Po-Boy (Served with 1 Side)</span>
-                    <span>$12.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-            </ul>
+            <div class="menu-section">
+                <h3>Entrées</h3>
+                <ul>
+                    <li class="menu-item">
+                        <span>Caldo De Mariscos (Local Seafood, Freshly Made Friday & Saturday Only)</span>
+                        <span>$14.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Shrimp or Fish Ranchero</span>
+                        <span>$13.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Black Drum Plate* (Fried, Grilled, or Blackened)</span>
+                        <span>Market Price</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item popular">
+                        <span>Fish, Shrimp, Oyster, or Chicken Po-Boy (Served with 1 Side)</span>
+                        <span>$12.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                </ul>
+            </div>
 
-            <h3>Sides</h3>
-            <ul>
-                <li>Fries</li>
-                <li>Coleslaw</li>
-                <li>Rice</li>
-                <li>Beans</li>
-                <li>Side Salad</li>
-                <li>Hush Puppies</li>
-                <li class="note">(Onion Rings 1.99 Extra)</li>
-            </ul>
+            <div class="menu-section">
+                <h3>Sides</h3>
+                <ul>
+                    <li>Fries</li>
+                    <li>Coleslaw</li>
+                    <li>Rice</li>
+                    <li>Beans</li>
+                    <li>Side Salad</li>
+                    <li>Hush Puppies</li>
+                    <li class="note">(Onion Rings 1.99 Extra)</li>
+                </ul>
+            </div>
 
-            <h3>Seafood Platters</h3>
-            <ul>
-                <li class="menu-item">
-                    <span>Shrimp Platter (8 Jumbo Shrimp)</span>
-                    <span>$12.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Fish Platter (Flounder)</span>
-                    <span>$12.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Calamari Platter (Wild Gulf Caught, 8 - 10)</span>
-                    <span>$12.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Oyster Platter</span>
-                    <span>$12.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Combo of 2 (Must Be Different)</span>
-                    <span>$14.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Combo of 3 (Must Be Different, Shrimp, Fish, Oyster, Calamari)</span>
-                    <span>$15.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-                <li class="menu-item">
-                    <span>Combo of 4 (Shrimp, Fish, Oyster, Calamari)</span>
-                    <span>$16.95</span>
-                    <a href="#" class="order-btn">Order Now</a>
-                </li>
-            </ul>
+            <div class="menu-section">
+                <h3>Seafood Platters</h3>
+                <ul>
+                    <li class="menu-item">
+                        <span>Shrimp Platter (8 Jumbo Shrimp)</span>
+                        <span>$12.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Fish Platter (Flounder)</span>
+                        <span>$12.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Calamari Platter (Wild Gulf Caught, 8 - 10)</span>
+                        <span>$12.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Oyster Platter</span>
+                        <span>$12.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Combo of 2 (Must Be Different)</span>
+                        <span>$14.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item popular">
+                        <span>Combo of 3 (Must Be Different, Shrimp, Fish, Oyster, Calamari)</span>
+                        <span>$15.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                    <li class="menu-item">
+                        <span>Combo of 4 (Shrimp, Fish, Oyster, Calamari)</span>
+                        <span>$16.95</span>
+                        <a href="#" class="order-btn">Order Now</a>
+                    </li>
+                </ul>
+            </div>
             <p><strong>5-Star Rating on Yelp & TripAdvisor</strong></p>
             <p><strong>Fresh Made to Order</strong></p>
         </section>
@@ -556,36 +725,83 @@
         </section>
     </main>
 
+    <a href="#" class="back-to-top">↑</a>
+
     <footer>
-        <p>&copy; 2025 Los Tortugo's Seafood Market. All rights reserved.</p>
+        <p>© 2025 Los Tortugo's Seafood Market. All rights reserved.</p>
     </footer>
 
     <script>
-        // Highlight active section in header
+        // Highlight active section in header and handle hover
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav ul li');
+        let isHovering = false;
 
+        // Set Home as active by default
+        document.querySelector('nav ul li a[href="#home"]').parentElement.classList.add('active');
+
+        // Handle scroll-based active state
         window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 80) {
-                    current = section.getAttribute('id');
-                }
+            if (!isHovering) {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 80) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(li => {
+                    li.classList.remove('active');
+                    if (li.querySelector('a').getAttribute('href').substring(1) === current) {
+                        li.classList.add('active');
+                    }
+                });
+            }
+        });
+
+        // Handle hover on navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                isHovering = true;
+                navLinks.forEach(li => li.classList.remove('active'));
+                link.classList.add('active');
             });
 
-            navLinks.forEach(li => {
-                li.classList.remove('active');
-                if (li.querySelector('a').getAttribute('href').substring(1) === current) {
-                    li.classList.add('active');
-                }
+            link.addEventListener('mouseleave', () => {
+                isHovering = false;
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 80) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(li => {
+                    li.classList.remove('active');
+                    if (li.querySelector('a').getAttribute('href').substring(1) === current) {
+                        li.classList.add('active');
+                    }
+                });
             });
         });
 
         // Toggle hamburger menu
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Back to top button visibility
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
         });
     </script>
 </body>
