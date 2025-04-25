@@ -27,6 +27,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s; /* Smooth transition for hiding/showing on mobile */
         }
 
         .header-container {
@@ -40,7 +41,6 @@
 
         .logo img {
             width: 180px;
-            max-height: 40px;
             height: auto;
         }
 
@@ -147,7 +147,7 @@
 
         /* Main Content */
         main {
-            padding-top: 80px; /* Matches header height */
+            padding-top: 80px; /* Matches header height on desktop */
             max-width: 1200px;
             margin: 0 auto;
             padding: 30px;
@@ -181,7 +181,7 @@
         h3 {
             font-size: 26px;
             margin-top: 25px;
-            margin-bottom: 45px;
+            margin-bottom: 15px;
         }
 
         p, li {
@@ -196,8 +196,8 @@
         .menu-item {
             display: flex;
             flex-direction: column;
+            margin-top:25px;
             padding: 20px 0;
-            margin-top: 25px;
             border-bottom: 1px dashed #ccc;
             transition: background-color 0.3s;
         }
@@ -212,7 +212,6 @@
 
         .menu-item span {
             font-size: 18px;
-            margin-top: 20px;
             margin-bottom: 5px;
         }
 
@@ -269,16 +268,18 @@
         /* Sticky Menu Headers */
         .menu-section {
             position: relative;
+            margin-top: 30px; /* Space above each menu section */
         }
 
         .menu-section h3 {
             position: sticky;
-            top: 60px; /* Matches the header height (15px padding top + bottom + content height) */
+            top: 80px; /* Matches header height on desktop */
             background-color: white;
-            padding: 30px 0;
+            padding: 15px 20px; /* Increased padding for more white space */
             margin: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow when sticky */
+            font-size: 30px; /* Larger font size */
+            z-index: 900; /* Below header but above content */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         /* Location Section */
@@ -341,6 +342,11 @@
                 flex-direction: row;
                 justify-content: space-between;
                 padding: 10px 15px;
+            }
+
+            .logo img {
+                max-height: 40px; /* Best practice for mobile logo height */
+                width: auto;
             }
 
             nav {
@@ -422,8 +428,14 @@
                 font-size: 14px;
             }
 
+            main {
+                padding-top: 60px; /* Matches mobile header height */
+            }
+
             .menu-section h3 {
-                top: 50px; /* Adjusted for mobile header height */
+                top: 60px; /* Matches mobile header height */
+                font-size: 24px; /* Slightly smaller on mobile */
+                padding: 10px 15px; /* Adjusted padding for mobile */
             }
         }
     </style>
@@ -897,6 +909,13 @@
                     }
                 });
             });
+
+            // Close hamburger menu on click (mobile)
+            link.addEventListener('click', () => {
+                const menuToggle = document.getElementById('menu-toggle');
+                menuToggle.checked = false;
+                document.querySelector('nav').classList.remove('active');
+            });
         });
 
         // Toggle hamburger menu
@@ -911,6 +930,26 @@
                 backToTop.style.display = 'block';
             } else {
                 backToTop.style.display = 'none';
+            }
+        });
+
+        // Hide/show header on scroll (mobile only)
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+        const headerHeight = header.offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 768) { // Only apply on mobile
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    header.style.top = `-${headerHeight}px`;
+                } else {
+                    // Scrolling up
+                    header.style.top = '0';
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scroll
             }
         });
     </script>
