@@ -46,7 +46,8 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 30px; /* Consistent spacing between nav items */
+            align-items: center;
+            gap: 20px; /* Increased spacing between buttons */
         }
 
         nav ul li {
@@ -54,26 +55,34 @@
         }
 
         nav ul li a {
+            display: flex;
+            align-items: center;
             color: white;
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
-            padding: 10px 0; /* Consistent padding for alignment */
-            transition: color 0.3s;
+            padding: 10px 20px; /* Padding inside the button */
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle background for buttons */
+            border-radius: 25px; /* Rounded rectangle */
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
         }
 
         nav ul li a:hover {
-            color: #3498db;
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px); /* Slight lift on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        nav ul li.active a::after {
+        nav ul li.active a {
+            background-color: #3498db; /* Highlight active section */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul li.active a::before {
             content: "🦞";
-            position: absolute;
-            right: -30px; /* Consistent spacing between emoji and text */
-            top: 50%;
-            transform: translateY(-50%);
+            margin-right: 10px; /* Space between emoji and text */
             font-size: 18px;
-            transition: all 0.3s ease;
         }
 
         /* Hamburger Menu */
@@ -185,8 +194,8 @@
 
         .menu-item {
             display: flex;
-            flex-direction: column; /* Stack name and price vertically */
-            padding: 20px 0; /* Increased spacing between items */
+            flex-direction: column;
+            padding: 20px 0;
             border-bottom: 1px dashed #ccc;
             transition: background-color 0.3s;
         }
@@ -201,7 +210,7 @@
 
         .menu-item span {
             font-size: 18px;
-            margin-bottom: 5px; /* Space between name and price */
+            margin-bottom: 5px;
         }
 
         .menu-item .price {
@@ -216,11 +225,11 @@
         .popular::before {
             content: "Popular!";
             position: absolute;
-            top: -20px; /* Moved higher to avoid overlap */
+            top: -20px;
             left: 0;
             background-color: #e74c3c;
             color: white;
-            padding: 8px 12px; /* Increased padding for better visibility */
+            padding: 8px 12px;
             font-size: 14px;
             border-radius: 5px;
         }
@@ -261,9 +270,10 @@
 
         .menu-section h3 {
             position: sticky;
-            top: 80px;
+            top: 0;
             background-color: white;
             padding: 10px 0;
+            margin: 0;
             z-index: 100;
         }
 
@@ -346,23 +356,25 @@
 
             nav ul {
                 flex-direction: column;
-                gap: 0;
-            }
-
-            nav ul li {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                gap: 10px; /* Adjusted for mobile */
+                padding: 10px 0;
             }
 
             nav ul li a {
-                display: block;
-                padding: 20px; /* Consistent padding for mobile */
+                padding: 15px 20px;
+                border-radius: 0; /* Remove rounded corners on mobile */
+                background-color: transparent; /* Remove background for mobile */
+                box-shadow: none; /* Remove shadow for mobile */
                 font-size: 20px;
             }
 
-            nav ul li.active a::after {
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
+            nav ul li.active a {
+                background-color: #3498db; /* Keep highlight for active section */
+                border-radius: 0;
+            }
+
+            nav ul li.active a::before {
+                margin-right: 10px;
             }
 
             .hamburger {
