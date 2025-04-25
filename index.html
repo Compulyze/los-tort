@@ -47,7 +47,7 @@
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 20px; /* Increased spacing between buttons */
+            gap: 20px;
         }
 
         nav ul li {
@@ -61,27 +61,27 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
-            padding: 10px 20px; /* Padding inside the button */
-            background-color: rgba(255, 255, 255, 0.1); /* Subtle background for buttons */
-            border-radius: 25px; /* Rounded rectangle */
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         nav ul li a:hover {
             background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px); /* Slight lift on hover */
+            transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         nav ul li.active a {
-            background-color: #3498db; /* Highlight active section */
+            background-color: #3498db;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         nav ul li.active a::before {
             content: "🦞";
-            margin-right: 10px; /* Space between emoji and text */
+            margin-right: 10px;
             font-size: 18px;
         }
 
@@ -146,7 +146,7 @@
 
         /* Main Content */
         main {
-            padding-top: 80px;
+            padding-top: 80px; /* Matches header height */
             max-width: 1200px;
             margin: 0 auto;
             padding: 30px;
@@ -270,11 +270,12 @@
 
         .menu-section h3 {
             position: sticky;
-            top: 0;
+            top: 60px; /* Matches the header height (15px padding top + bottom + content height) */
             background-color: white;
             padding: 10px 0;
             margin: 0;
             z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow when sticky */
         }
 
         /* Location Section */
@@ -356,20 +357,20 @@
 
             nav ul {
                 flex-direction: column;
-                gap: 10px; /* Adjusted for mobile */
+                gap: 10px;
                 padding: 10px 0;
             }
 
             nav ul li a {
                 padding: 15px 20px;
-                border-radius: 0; /* Remove rounded corners on mobile */
-                background-color: transparent; /* Remove background for mobile */
-                box-shadow: none; /* Remove shadow for mobile */
+                border-radius: 0;
+                background-color: transparent;
+                box-shadow: none;
                 font-size: 20px;
             }
 
             nav ul li.active a {
-                background-color: #3498db; /* Keep highlight for active section */
+                background-color: #3498db;
                 border-radius: 0;
             }
 
@@ -416,6 +417,10 @@
 
             .order-btn {
                 font-size: 14px;
+            }
+
+            .menu-section h3 {
+                top: 50px; /* Adjusted for mobile header height */
             }
         }
     </style>
